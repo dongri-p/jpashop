@@ -36,6 +36,7 @@ public class Order {
     private List<OrderItem> orderItems = new ArrayList<>();
 
     @OneToOne
+    @JoinColumn(name = "deliver_id")
     private Delivery delivery;
 
     private LocalDateTime orderDate;
