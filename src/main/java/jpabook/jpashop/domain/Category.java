@@ -16,7 +16,6 @@ import jakarta.persistence.OneToMany;
 import jpabook.jpashop.domain.Item.Item;
 import lombok.Getter;
 import lombok.Setter;
-import net.bytebuddy.dynamic.TypeResolutionStrategy.Lazy;
 
 @Entity
 @Getter @Setter
