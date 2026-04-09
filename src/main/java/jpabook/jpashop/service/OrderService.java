@@ -1,5 +1,7 @@
 package jpabook.jpashop.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
@@ -46,4 +48,18 @@ public class OrderService {
         
         return order.getId();
     }
+
+    // 주문 취소
+    @Transactional
+    public void cancelOrder(Long orderId) {
+        Order order = orderRepository.findOne(orderId);
+
+        // 주문 취소
+        order.cancel();
+    }
+
+    // 검색
+    // public List<Order> findOrders(OrderSearch orderSearch) {
+    //     return orderSearch.findAll(orderSearch);
+    // }
 }
