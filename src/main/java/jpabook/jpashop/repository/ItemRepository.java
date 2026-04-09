@@ -1,7 +1,15 @@
 package jpabook.jpashop.repository;
 
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import jakarta.persistence.EntityManager;
+import jpabook.jpashop.domain.Item.Item;
+import lombok.RequiredArgsConstructor;
+
 @Repository
-@requiredArgsConstructor
+@RequiredArgsConstructor
 public class ItemRepository {
 
     private final EntityManager em;

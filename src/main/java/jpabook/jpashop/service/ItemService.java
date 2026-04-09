@@ -2,9 +2,16 @@ package jpabook.jpashop.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+import jakarta.transaction.Transactional;
+import jpabook.jpashop.domain.Item.Item;
+import jpabook.jpashop.repository.ItemRepository;
+import lombok.RequiredArgsConstructor;
+
 @Service
 @RequiredArgsConstructor
-@Transactional(readOnly = true)
+@Transactional
 public class ItemService {
 
     private final ItemRepository itemRepository;
