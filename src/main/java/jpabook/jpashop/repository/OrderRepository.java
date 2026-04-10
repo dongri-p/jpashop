@@ -1,6 +1,8 @@
 package jpabook.jpashop.repository;
 
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import jakarta.persistence.EntityManager;
@@ -21,6 +23,13 @@ public class OrderRepository {
         return em.find(Order.class, id);
     }
 
-    // publici List<Order> findAll() {}   
+    public List<Order> findAll(OrderSearch orderSearch) {
+        return em.createQuery("select o from Order o join o.member m" + 
+        "where o.status = :status " + 
+        "and m.name like :name", Order.class)
+        .setParameter("statue", OrderSearch.getOrderStatus())
+        .setMaxResults(1000)
+        .getResultList();
+    }
     
 }
