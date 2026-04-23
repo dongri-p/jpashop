@@ -18,10 +18,11 @@ public class InitDb {
     static class InitService {
 
         private final EntityManager em;
-        public void dvInit() {
+        public void dbInit1() {
             Member member = new Member();
             member.setName("username");
             member.setAddress(new Address("서울", "1", "11111"));
+            em.persist(member);
         }
     }
 }
