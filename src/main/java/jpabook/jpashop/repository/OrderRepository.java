@@ -2,8 +2,6 @@ package jpabook.jpashop.repository;
 
 
 import java.util.List;
-
-import org.aspectj.weaver.ast.Or;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
@@ -37,7 +35,7 @@ public class OrderRepository {
     
     public List<Order> findAllByString(OrderSearch orderSearch) {
 
-        String jpql = "select 0 from Order o join o.member m";
+        String jpql = "select o from Order o join o.member m";
         boolean isFirstCondition = true;
 
         // 주문 상태 검색
