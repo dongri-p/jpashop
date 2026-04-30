@@ -13,6 +13,7 @@ spring:
         # show_sql: TRUE
         format_sql: true
         dialect: org.hibernate.dialect.H2Dialect
+        default_batch_fetch_size: 100
 
   thymeleaf:
     cache: false
