@@ -1,7 +1,12 @@
 package jpabook.jpashop.repository.order.query;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jpabook.jpashop.domain.Address;
+import jpabook.jpashop.domain.OrderStatus;
 import lombok.Data;
 
 @Data
@@ -19,4 +24,5 @@ public class OrderItemQueryDto {
         this.orderPrice = orderPrice;
         this.count = count;
     }
+
 }
