@@ -24,7 +24,7 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
 
-    private final MemberRepository memberRepository;
+    private final jpabook.jpashop.repository.order.MemberRepository memberRepository;
 
     private final ItemRepository itemRepository;
 
@@ -32,7 +32,7 @@ public class OrderService {
     @Transactional
     public Long order(Long memberId, Long itemId, int count) {
         //엔티티 조회
-        Member member = memberRepository.findOne(memberId);
+        Member member = memberRepository.findById(memberId).get();
         Item item = itemRepository.findOne(itemId);
 
         //배송정보 생성
